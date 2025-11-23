@@ -25,11 +25,13 @@ repositories {
 }
 
 dependencies {
-    testImplementation(
-            'org.junit.jupiter:junit-jupiter-api:5.9.0',
-            'com.codeborne:selenide:6.7.2',
-            'io.qameta.allure:allure-selenide:2.19.0'
-    )
+            testImplementation platform('org.junit:junit-bom:5.10.0')
+                    testImplementation 'org.junit.jupiter:junit-jupiter'
+                    testImplementation 'com.codeborne:selenide:7.0.1'
+                    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+                    testImplementation 'org.apache.poi:poi:5.4.1'
+                    testImplementation 'io.qameta.allure:allure-selenide:2.19.0'
+                    testImplementation 'org.aspectj:aspectjweaver:1.9.20'
 
     testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.9.0')
 }
